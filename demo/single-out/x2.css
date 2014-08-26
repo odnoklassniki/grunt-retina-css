@@ -1,0 +1,15 @@
+
+@media (x2) {
+  .class-name2 > #some-id, .new-class {
+    background: url('demo/img/fxt1-x2.gif');
+  }
+  .class3 {
+    background-image: url('demo/img/fxt3-x2.gif');
+  }
+  .class4 {
+    background-image: url('demo/img/fxt1-x2.gif');
+  }
+  .rule, #from-second > .file {
+    background: url('demo/img/fxt1-x2.gif');
+  }
+}

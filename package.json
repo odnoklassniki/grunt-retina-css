@@ -1,0 +1,41 @@
+{
+  "name": "grunt-retina-css",
+  "description": "Grunt task for generating CSS with 2x background-images",
+  "version": "0.0.1",
+  "homepage": "https://github.com/odnoklassniki/grunt-retina-css",
+  "author": "Cheshirsky",
+  "files": [
+    "tasks"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/odnoklassniki/grunt-retina-css.git"
+   },
+  "main": "index.js",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.2",
+	"grunt-contrib-jshint": "~0.7.1",
+    "grunt-contrib-clean": "0.5.0"
+  },
+  "dependencies": {
+    "postcss": "~2.1.2"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.0"
+  },
+  "keywords": [
+    "gruntplugin",
+    "css",
+    "versioning"
+  ],
+  "bugs": {
+    "url": "https://github.com/odnoklassniki/grunt-retina-css/issues"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "MIT"
+}

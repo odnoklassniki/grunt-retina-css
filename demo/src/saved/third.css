@@ -1,0 +1,29 @@
+.class-name1 {
+	background: url('/demo/img/unexisted.jpg');
+}
+
+.class-name2 > #some-id, .new-class {
+	background: url('/demo/img/fxt1.gif');
+}
+
+.class-name1 {
+	background: url('/demo/img/fxt2.gif');
+}
+
+.class-name1 {
+	background: url('/demo/img/fxt2.gif');
+}
+
+.class3 {
+	border: 1px solid black;
+	background-image: url('/demo/img/fxt3.gif');
+}
+
+.class-name2 {
+	background: url('/demo/img/fxt2.gif');
+}
+
+.class4 {
+	border: 2px solid black;
+	background-image: url('/demo/img/fxt1.gif');
+}
