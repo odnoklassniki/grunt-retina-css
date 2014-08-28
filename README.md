@@ -1,4 +1,4 @@
-# grunt-retina-css v0.1.0 
+# grunt-retina-css v0.0.1
 
 > Grunt task for generating CSS with 2x background-images.
 
