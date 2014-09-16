@@ -3,7 +3,7 @@
 }
 
 .class-name2 > #some-id, .new-class {
-	background: url('/demo/img/fxt1.gif');
+	background: url('/demo/img/fxt1.gif'); /* test comment 1 */
 }
 
 .class-name1 {
