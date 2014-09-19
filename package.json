@@ -1,7 +1,7 @@
 {
   "name": "grunt-retina-css",
   "description": "Grunt task for generating CSS with 2x background-images",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "homepage": "https://github.com/odnoklassniki/grunt-retina-css",
   "author": "Cheshirsky",
   "files": [
