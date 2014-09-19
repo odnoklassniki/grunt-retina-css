@@ -1,7 +1,7 @@
 
 @media (x2) {
   .class-name2 > #some-id, .new-class {
-    background: url('demo/img/fxt1-x2.gif'); /*test comment 1*/;
+    background: url('demo/img/fxt1-x2.gif'); /* test comment 1 */;
   }
   .class3 {
     background-image: url('demo/img/fxt3-x2.gif');
@@ -10,6 +10,6 @@
     background-image: url('demo/img/fxt1-x2.gif');
   }
   .rule, #from-second > .file {
-    background: url('demo/img/fxt1-x2.gif'); /*one more test comment*/;
+    background: url('demo/img/fxt1-x2.gif'); /* one more test comment */;
   }
 }

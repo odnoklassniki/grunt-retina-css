@@ -41,7 +41,8 @@ Storage.prototype = {
             "line": comment.source.start.line,
             "text": comment.text,
             "before": comment.before,
-            "left": comment.left
+            "left": comment.left,
+            "right": comment.right
         }, _comments);
     },
 

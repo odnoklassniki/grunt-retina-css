@@ -33,8 +33,9 @@ module.exports = function (grunt) {
                     "between": " "
                 },
                 "comment": {
-                    'left': '',
-                    'right': ''
+                    'left': " ",
+                    'right': " ",
+                    "between": " "
                 }
             }
         });
@@ -52,11 +53,31 @@ module.exports = function (grunt) {
 
                 if (isValidBackgroundBlock) {
                     DS.storeDeclaration(filePath, decl);
+                    if (decl.hasOwnProperty('_value')) {
+                        var comment = processIncorrectInlineComment(decl);
+                        DS.storeComment(filePath, comment);
+                    }
                 } else if (decl.type === 'comment') {
                     DS.storeComment(filePath, decl);
                 }
 
             });
+        };
+
+        var processIncorrectInlineComment = function(decl) {
+            var spaces = options.whitespacing.comment;
+            var text = decl._value.raw
+                .replace(decl._value.value, "")
+                .replace("/*", "")
+                .replace("*/", "");
+            return {
+                "type": "comment",
+                "source": decl.source,
+                "text": text,
+                "before": spaces.before,
+                "left": spaces.left,
+                "right": spaces.right
+            };
         };
 
         var processCssFile = function(filePath, fileData) {

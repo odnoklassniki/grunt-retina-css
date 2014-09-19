@@ -34,6 +34,6 @@
     background: url('demo/img/fxt2-retina.gif');
   }
   .class-name2 {
-    background: url('demo/img/fxt2-retina.gif'); /*test comment*/;
+    background: url('demo/img/fxt2-retina.gif'); /* test comment */;
   }
 }
