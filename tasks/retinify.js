@@ -33,9 +33,10 @@ module.exports = function (grunt) {
                     "between": " "
                 },
                 "comment": {
-                    'left': " ",
-                    'right': " ",
-                    "between": " "
+                    'left': "",
+                    'right': "",
+                    "between": "",
+                    "before": " "
                 }
             }
         });
@@ -58,6 +59,8 @@ module.exports = function (grunt) {
                         DS.storeComment(filePath, comment);
                     }
                 } else if (decl.type === 'comment') {
+                    decl.text = Utils.trim(decl.text);
+                    decl.before = options.whitespacing.comment.before;
                     DS.storeComment(filePath, decl);
                 }
 
@@ -70,6 +73,7 @@ module.exports = function (grunt) {
                 .replace(decl._value.value, "")
                 .replace("/*", "")
                 .replace("*/", "");
+            text = Utils.trim(text);
             return {
                 "type": "comment",
                 "source": decl.source,
@@ -122,6 +126,10 @@ module.exports = function (grunt) {
 
         this.files.forEach(function(file) {
             var filesList = Utils.applyFileFilter(file, cwd);
+            if(!filesList.length)  {
+                grunt.log.errorlns("Nothing to process!");
+                done();
+            }
             if (options.resultsCSSFileName) {
                 // processing css files to get styles for modification
                 var processedFileNames = filesList.map(function(filepath) {
@@ -141,6 +149,7 @@ module.exports = function (grunt) {
                     processCssFile(fullFilePath, fileData);
                     var media = createMediaBlock(fullFilePath);
                     media && Utils.writeCSSFile(dest + filepath, [fileData, media.toString()].join("\n"));
+                    filesCount++;
                     if(filesCount >= filesList.length)  {
                         done();
                     }
