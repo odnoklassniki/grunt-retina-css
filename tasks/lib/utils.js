@@ -30,7 +30,7 @@ return {
     "applyFileFilter": function(file, cwd) {
         return file.src.filter(function(filepath) {
             if (!grunt.file.exists(cwd + filepath)) {
-                grunt.log.warn('Source file "' + filepath + '" not found.');
+                grunt.log.warn('Source file "' + cwd + filepath + '" not found.');
                 return false;
             } else {
                 return true;

@@ -5,7 +5,7 @@ module.exports = function (grunt) {
 
     grunt.file.defaultEncoding = 'utf8';
 
-    grunt.registerMultiTask('retinify', 'Grunt task for generating CSS with 2x background-images', function () {
+    grunt.registerMultiTask('retinaCSS', 'Grunt task for generating CSS with 2x background-images', function () {
         var options = this.options({
             "retinaPrefix": '-x2',
             "resultsCSSFileName": undefined,
@@ -120,8 +120,12 @@ module.exports = function (grunt) {
             return media ? media.toString() : undefined;
         };
 
-        var cwd = this.data.cwd + (this.data.cwd.slice(-1) !== "/" ? "/" : "");
-        var dest = this.data.dest + (this.data.cwd.slice(-1) !== "/" ? "/" : "");
+        var cwd = this.data.cwd
+            ? this.data.cwd + (this.data.cwd.slice(-1) !== "/" ? "/" : "")
+            : "";
+        var dest = this.data.dest
+            ? this.data.dest + (this.data.cwd.slice(-1) !== "/" && this.data.dest.length ? "/" : "")
+            : "";
         var filesCount = 0;
 
         this.files.forEach(function(file) {
